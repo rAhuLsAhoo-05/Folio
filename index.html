@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rahul Kumar Sahoo | Back End Developer, Python, AI-ML</title>
+<meta name="description" content="Rahul Kumar Sahoo, Back End Developer and AI/ML engineer from Bhubaneswar. Python, FastAPI, Docker, Kubernetes, RAG and LLM projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ecebf5;--ink:#14122b;--mut:#4d4a6b;--card:#fff;--line:#cfcde6;--blue:#3b3bff;--yel:#ffd23f;--mint:#5be3b0;--pink:#ff8fb8;--on-blue:#fff;
+--hd:"Bricolage Grotesque","Trebuchet MS",sans-serif;--bd:"DM Sans",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0e1d;--ink:#f0eefc;--mut:#a9a6cc;--card:#191833;--line:#2c2a52;--blue:#7b7bff}}
+:root[data-theme="dark"]{--bg:#0f0e1d;--ink:#f0eefc;--mut:#a9a6cc;--card:#191833;--line:#2c2a52;--blue:#7b7bff}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--bd);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(16px,4vw,48px);background:var(--bg);border-bottom:1px solid var(--line)}
+header b{font:800 20px var(--hd)}
+nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;padding:6px 12px;border-radius:99px;font-weight:500;font-size:15px}
+nav a:hover{background:var(--yel);color:#14122b}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 12px;font:500 14px var(--bd);cursor:pointer}
+main{max-width:1100px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+section{padding:72px 0 8px}
+h2{font:800 clamp(32px,5vw,52px)/1.05 var(--hd);margin:0 0 28px;letter-spacing:-.02em}
+.hero{position:relative;min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center;padding:40px 0 56px;isolation:isolate}
+.clock{font:500 15px var(--bd);color:var(--mut);display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.clock i{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px color-mix(in srgb,var(--mint) 30%,transparent)}
+h1{margin:0;font:800 clamp(52px,12.5vw,168px)/.9 var(--hd);letter-spacing:-.04em;cursor:default}
+h1 .w{display:block;white-space:nowrap}
+h1 span.l{display:inline-block;transition:transform .25s cubic-bezier(.3,1.6,.5,1),color .2s}
+h1 span.l:hover{transform:translateY(-.12em) rotate(-6deg);color:var(--blue)}
+.role{font:500 clamp(20px,3vw,30px)/1.25 var(--hd);margin:26px 0 0;max-width:30ch}
+.hint{color:var(--mut);font-size:14px;margin-top:20px}
+.stk{position:absolute;z-index:-1;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.stk:active{cursor:grabbing}
+.stk span{display:block;padding:9px 18px;border-radius:99px;font:700 16px var(--hd);color:#14122b;border:2px solid #14122b;animation:fl 5s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translateY(-9px) rotate(2deg)}}
+.stk:nth-child(odd) span{animation-duration:6.5s}
+.stk{z-index:2}
+.marq{overflow:hidden;border-block:2px solid var(--ink);background:var(--yel);color:#14122b;margin:0 calc(-1*clamp(16px,4vw,48px))}
+.marq div{display:flex;gap:40px;width:max-content;padding:12px 0;font:800 22px var(--hd);animation:mq 28s linear infinite}
+.marq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.about{display:grid;gap:28px;grid-template-columns:1.4fr 1fr;align-items:start}
+.about p{margin:0 0 14px;max-width:62ch}
+.facts{display:grid;gap:12px}
+.fact{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:5px 5px 0 var(--ink)}
+.fact b{display:block;font:800 30px/1 var(--hd)}
+.fact small{color:var(--mut);font-size:14px}
+.skills{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.sk h3{margin:0 0 12px;font:800 20px var(--hd)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{padding:4px 12px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:14.5px;font-weight:500;transition:background .15s,transform .15s}
+.chips li:hover{background:var(--mint);color:#14122b;transform:rotate(-3deg) scale(1.06)}
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:26px 0;border-top:2px solid var(--ink)}
+.job time{font-weight:700;color:var(--blue)}
+.job h3{margin:0;font:800 26px/1.15 var(--hd)}
+.job .co{color:var(--mut);margin:2px 0 12px}
+.job ul,.pj ul{margin:0;padding-left:20px}
+.job li,.pj li{margin-bottom:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{font:700 15px var(--bd);padding:8px 18px;border-radius:99px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--blue);color:var(--on-blue)}
+.pjs{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.pj{background:var(--card);border:2px solid var(--ink);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,box-shadow .2s;transform-style:preserve-3d}
+.pj:hover{box-shadow:8px 8px 0 var(--blue)}
+.pj[hidden]{display:none}
+.pj h3{margin:0;font:800 23px/1.15 var(--hd)}
+.pj .kind{align-self:flex-start;padding:2px 12px;border-radius:99px;font-weight:700;font-size:13px;color:#14122b}
+.pj ul{font-size:16px;color:var(--mut)}
+.pj .chips{margin-top:auto}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.edu h3{margin:0;font:800 22px var(--hd)}
+.edu p{margin:4px 0 0;color:var(--mut)}
+.contact{margin:72px 0 40px;background:var(--blue);color:var(--on-blue);border-radius:32px;padding:clamp(28px,6vw,64px)}
+.contact h2{color:var(--on-blue)}
+.contact p{max-width:46ch;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btns a{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:99px;border:2px solid #fff;color:#fff;transition:transform .15s}
+.btns a.p{background:var(--yel);color:#14122b;border-color:var(--yel)}
+.btns a:hover{transform:translateY(-3px) rotate(-1.5deg)}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:0 0 32px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.rv.on{opacity:1;transform:none}
+@media (max-width:760px){.about{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}nav a:not(.keep){display:none}.stk span{font-size:13px;padding:6px 12px}section{padding-top:56px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+<b>RKS</b>
+<nav aria-label="Primary">
+<a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a class="keep" href="#contact">Contact</a>
+<button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+</nav>
+</header>
+
+<main>
+<div class="hero" id="top">
+<div class="clock"><i></i><span id="clk">Bhubaneswar, Odisha</span></div>
+<h1 aria-label="Rahul Kumar Sahoo"><span class="w" aria-hidden="true" data-t="Rahul"></span><span class="w" aria-hidden="true" data-t="Kumar Sahoo"></span></h1>
+<!-- <p class="role">Back End Developer. Python programmer. I build APIs, pipelines and LLM tools that run in production.</p> -->
+<p class="hint">Grab a sticker and drag it around. Hover over the name too.</p>
+<div class="stk" style="top:10%;right:6%;rotate:-8deg"><span style="background:var(--yel)">Python</span></div>
+<div class="stk" style="top:26%;right:24%;rotate:6deg"><span style="background:var(--mint)">FastAPI</span></div>
+<div class="stk" style="top:46%;right:7%;rotate:5deg"><span style="background:var(--pink)">RAG + LLMs</span></div>
+<div class="stk" style="bottom:20%;right:28%;rotate:-5deg"><span style="background:#9ec5ff">Docker</span></div>
+<div class="stk" style="bottom:8%;right:8%;rotate:9deg"><span style="background:var(--yel)">Kubernetes</span></div>
+<div class="stk" style="top:6%;right:40%;rotate:3deg"><span style="background:var(--pink)">MERN</span></div>
+</div>
+
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about" class="rv">
+<h2>About</h2>
+<div class="about">
+<div>
+<p>I'm a Computer Science and Engineering graduate from Odisha University of Technology and Research (formerly CET) in Bhubaneswar, focused on back end development and applied AI/ML.</p>
+<p>I have interned as a MERN Stack Intern at Mindfire Solutions and as an AI and Automation Intern at the National Informatics Centre, where I built a document-aware RAG chatbot.</p>
+<p>Outside internships I build projects across the stack: AI code reviewer for GitHub, an options pricing tool and a sensor-data trend API on Snowflake and AWS S3.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>8.7</b><small>CGPA, B.Tech CSE</small></div>
+<div class="fact"><b>2</b><small>Internships: Mindfire Solutions, NIC</small></div>
+<div class="fact"><b>4</b><small>Projects: CI/CD, GitHub AI reviewer, options pricing, AI trend API</small></div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="rv">
+<h2>Skills</h2>
+<div class="skills">
+<div class="sk"><h3>Programming languages</h3><ul class="chips"><li>C</li><li>C++</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul></div>
+<div class="sk"><h3>Software skills</h3><ul class="chips"><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>Natural Language Processing</li><li>Database Management</li><li>Backend Web Development</li></ul></div>
+<div class="sk"><h3>Libraries and frameworks</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li><li>Scikit-learn</li><li>Seaborn</li><li>OpenCV</li><li>Django</li></ul></div>
+<div class="sk"><h3>Databases and tools</h3><ul class="chips"><li>VS Code</li><li>Git</li><li>GitHub</li><li>Postgres</li><li>MySQL</li><li>Redis</li><li>Docker</li></ul></div>
+</div>
+</section>
+
+<section id="experience" class="rv">
+<h2>Work experience</h2>
+<article class="job">
+<time>01/2026 - 03/2026</time>
+<div><h3>MERN Stack Intern</h3><p class="co">Mindfire Solutions</p>
+<ul><li><b>Prescription Management System:</b> developed a full-stack prescription management application on the MERN stack, building RESTful APIs for medicine records, prescription management and user interactions.</li>
+<li><b>API integration and data processing:</b> tested and documented APIs with Postman, and integrated medicine and healthcare information from external websites to provide enriched prescription details.</li></ul></div>
+</article>
+<article class="job">
+<time>01/2025 - 04/2025</time>
+<div><h3>AI and Automation Intern</h3><p class="co">National Informatics Centre (NIC)</p>
+<ul><li><b>RAG chatbot interface:</b> developed a document-aware chatbot using Python, Ollama and DeepSeek 1.5, improving response accuracy and context-awareness through RAG.</li>
+<li><b>System development:</b> built and deployed the entire solution in Python, integrating LLM inference with a lightweight interface for seamless user interaction.</li></ul></div>
+</article>
+</section>
+
+<section id="projects" class="rv">
+<h2>Projects</h2>
+<div class="tabs" role="group" aria-label="Filter projects">
+<button type="button" aria-pressed="true" data-f="all">All</button>
+<button type="button" aria-pressed="false" data-f="ai">AI and ML</button>
+<button type="button" aria-pressed="false" data-f="backend">Back end</button>
+<button type="button" aria-pressed="false" data-f="devops">DevOps</button>
+</div>
+<div class="pjs">
+<article class="pj" data-c="devops backend"><span class="kind" style="background:var(--mint)">DevOps</span><h3>CI/CD and Kubernetes Deployment Pipeline</h3>
+<ul><li>Built an end-to-end CI/CD pipeline for a FastAPI application to automate source-code integration, testing, containerization and deployment.</li><li>Used Git and GitHub for source-code versioning and release workflow management.</li></ul>
+<ul class="chips"><li>GoCD</li><li>GitHub</li><li>Docker</li><li>Kubernetes</li><li>AWS</li><li>Grafana</li><li>Linux</li></ul></article>
+<article class="pj" data-c="ai backend"><span class="kind" style="background:var(--pink)">AI and full stack</span><h3>AI-Powered GitHub Code Reviewer</h3>
+<ul><li>Developed an AI-powered code review system that analyzes GitHub repositories and pull requests to detect bugs, suggest improvements and generate optimized code using LLM-based analysis.</li></ul>
+<ul class="chips"><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>GitHub API</li><li>Ollama/OpenAI</li><li>Docker</li></ul></article>
+<article class="pj" data-c="backend ai"><span class="kind" style="background:var(--yel)">Back end and cloud</span><h3>AI Trend Analysis API</h3>
+<ul><li>Developed a scalable FastAPI backend to analyze industrial vibration sensor data by retrieving feature files from Snowflake External Stages and processing time-series data for trend visualization.</li></ul>
+<ul class="chips"><li>Python</li><li>FastAPI</li><li>Snowflake</li><li>AWS S3</li><li>Pandas</li><li>SQL</li><li>Matplotlib</li><li>Docker</li></ul></article>
+<article class="pj" data-c="ai"><span class="kind" style="background:#9ec5ff">Self-owned</span><h3>Option Pricing and Risk Analysis System</h3>
+<ul><li>Implemented the Black-Scholes model in Python to price call and put options from volatility, interest rate and time to maturity.</li><li>Built an interactive interface to visualize how option prices change with volatility and underlying asset price.</li></ul>
+<ul class="chips"><li>Python</li><li>NumPy</li><li>SciPy</li><li>Streamlit</li><li>Matplotlib</li></ul></article>
+</div>
+</section>
+
+<section id="education" class="rv">
+<h2>Education</h2>
+<div class="edu"><div><h3>Odisha University of Technology and Research (formerly CET)</h3><p>B.Tech in Computer Science and Engineering , CGPA 8.71</p></div><p>Bhubaneswar, Odisha<br>2022 - 2026</p></div>
+</section>
+
+<section id="contact" class="contact rv">
+<h2>Let's build something.</h2>
+<p>I'm looking for back end and AI/ML roles. Email is the fastest way to reach me.</p>
+<div class="btns">
+<a class="p" href="mailto:sr.rksahoo05@gmail.com">sr.rksahoo05@gmail.com</a>
+<a href="tel:+919832932868">+91 9832932868</a>
+<a href="https://www.linkedin.com/in/rahul-sahoo-996967264" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://github.com/rAhuLsAhoo-05" target="_blank" rel="noopener" id="gh">GitHub</a>
+<a href="https://leetcode.com/u/rAHUL_SahOO/" target="_blank" rel="noopener" id="lc">LeetCode</a>
+</div>
+</section>
+</main>
+<footer>© 2026 Rahul Kumar Sahoo. Bhubaneswar, Odisha.</footer>
+
+<script>
+(function(){
+var d=document;
+d.querySelectorAll('h1 .w').forEach(function(w){
+ w.textContent.length||(w.innerHTML=w.dataset.t.split('').map(function(c){return c===' '?' ':'<span class="l">'+c+'</span>'}).join(''));
+});
+var sk=['Python','FastAPI','Django','Docker','Kubernetes','RAG','LLM inference','PostgreSQL','Redis','Snowflake','AWS S3','CI/CD','Streamlit','OpenCV','REST APIs'];
+var h=sk.map(function(s){return '<span>'+s+'</span>'}).join('');
+d.getElementById('mq').innerHTML=h+h;
+function tick(){try{d.getElementById('clk').textContent='Bhubaneswar \u2022 GMT +5:30 \u2022 '+new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit'})}catch(e){}}
+tick();setInterval(tick,30000);
+var root=d.documentElement,tb=d.getElementById('theme');
+tb.onclick=function(){var dark=root.dataset.theme==='dark'||(root.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches);root.dataset.theme=dark?'light':'dark'};
+d.querySelectorAll('.stk').forEach(function(s){
+ var x=0,y=0,sx,sy;
+ s.addEventListener('pointerdown',function(e){s.setPointerCapture(e.pointerId);sx=e.clientX-x;sy=e.clientY-y;s.onpointermove=function(m){x=m.clientX-sx;y=m.clientY-sy;s.style.transform='translate('+x+'px,'+y+'px)'}});
+ s.addEventListener('pointerup',function(){s.onpointermove=null});
+});
+var tabs=d.querySelectorAll('.tabs button'),pj=d.querySelectorAll('.pj');
+tabs.forEach(function(b){b.onclick=function(){
+ tabs.forEach(function(t){t.setAttribute('aria-pressed',t===b)});
+ pj.forEach(function(p){p.hidden=!(b.dataset.f==='all'||p.dataset.c.indexOf(b.dataset.f)>-1)});
+}});
+pj.forEach(function(p){
+ p.addEventListener('pointermove',function(e){var r=p.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;p.style.transform='perspective(800px) rotateY('+px*5+'deg) rotateX('+-py*5+'deg)'});
+ p.addEventListener('pointerleave',function(){p.style.transform=''});
+});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08});
+d.querySelectorAll('.rv').forEach(function(n){io.observe(n)});
+setTimeout(function(){d.querySelectorAll('.rv').forEach(function(n){n.classList.add('on')})},2500);
+})();
+</script>
+</body>
+</html>
